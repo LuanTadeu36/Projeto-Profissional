@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <div style={{ minHeight: '100vh', paddingTop: 90, paddingBottom: 50 }}>
+      <div className="min-h-screen">
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/sobre" element={<Sobre />} />
