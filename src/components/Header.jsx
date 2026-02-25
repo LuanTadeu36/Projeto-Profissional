@@ -49,8 +49,7 @@ export default function Header() {
         </button>
         <nav className="flex flex-col items-stretch gap-2 mt-20 px-4">
           <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/sobre" onClick={() => setMenuOpen(false)}>Quem Somos</Link>
-          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/beneficios" onClick={() => setMenuOpen(false)}>Evolução</Link>
-          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/treinos" onClick={() => setMenuOpen(false)}>Treinos</Link>
+          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/evolucao" onClick={() => setMenuOpen(false)}>Evolução</Link>
           <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/documentario" onClick={() => setMenuOpen(false)}>Documentário</Link>
           <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/roadmap" onClick={() => setMenuOpen(false)}>O que está por vir</Link>
           <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/redes" onClick={() => setMenuOpen(false)}>Redes</Link>
@@ -71,18 +70,17 @@ export default function Header() {
           <div className="flex items-center justify-start">
             <Link to="/" className="flex items-center gap-0 select-none">
               <img src={teste2} alt="Logo secundário" className="h-8 xl:h-10 ml-1 xl:ml-2 mr-1 xl:mr-2" />
-              <span className="font-bold text-base xl:text-lg tracking-widest text-black xl:text-amarelo transition-colors whitespace-nowrap">NO CORRE</span>
+              <span className="font-bold text-base xl:text-lg tracking-widest text-black transition-colors whitespace-nowrap">NO CORRE</span>
             </Link>
           </div>
 
           {/* Centro: Navegação */}
           <nav className="hidden xl:flex flex-grow justify-center gap-2 items-center">
-            <Link className="px-3 py-2 font-medium text-amarelo hover:text-yellow-400 transition-colors" to="/sobre">Quem Somos</Link>
-            <Link className="px-3 py-2 font-medium text-amarelo hover:text-yellow-400 transition-colors" to="/beneficios">Evolução</Link>
-            <Link className="px-3 py-2 font-medium text-amarelo hover:text-yellow-400 transition-colors" to="/treinos">Treinos</Link>
-            <Link className="px-3 py-2 font-medium text-amarelo hover:text-yellow-400 transition-colors" to="/documentario">Documentário</Link>
-            <Link className="px-3 py-2 font-medium text-amarelo hover:text-yellow-400 transition-colors" to="/roadmap">O que está por vir</Link>
-            <Link className="px-3 py-2 font-medium text-amarelo hover:text-yellow-400 transition-colors" to="/redes">Redes</Link>
+            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/sobre">Quem Somos</Link>
+            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/evolucao">Evolução</Link>
+            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/documentario">Documentário</Link>
+            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/roadmap">O que está por vir</Link>
+            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/redes">Redes</Link>
           </nav>
 
           {/* Direita: Botão lista de espera (desktop) OU hamburguer (mobile) */}
