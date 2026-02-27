@@ -27,7 +27,7 @@ export default function Header() {
   }, [menuOpen]);
 
   const mobileMenu = menuOpen && createPortal(
-    <div className="md:hidden">
+    <div className="lg:hidden">
       {/* Overlay escuro */}
       <div 
         className="fixed inset-0"
@@ -75,7 +75,7 @@ export default function Header() {
           </div>
 
           {/* Centro: Navegação */}
-          <nav className="hidden md:flex flex-grow justify-center gap-2 items-center">
+          <nav className="hidden lg:flex flex-grow justify-center gap-2 items-center">
             <Link className="px-3 py-2 font-medium text-black hover:text-amarelo transition-colors" to="/sobre">Quem Somos</Link>
             <Link className="px-3 py-2 font-medium text-black hover:text-amarelo transition-colors" to="/evolucao">Evolução</Link>
             <Link className="px-3 py-2 font-medium text-black hover:text-amarelo transition-colors" to="/documentario">Documentário</Link>
@@ -86,14 +86,14 @@ export default function Header() {
           {/* Direita: Botão lista de espera (desktop) OU hamburguer (mobile) */}
           <div className="flex items-center ml-auto">
             {/* Botão lista de espera desktop */}
-            <div className="hidden md:flex items-center justify-end">
+            <div className="hidden lg:flex items-center justify-end">
               <Link to="/lista-espera">
                 <button className="bg-yellow-400 hover:bg-yellow-500 text-preto font-semibold rounded-md px-5 py-2 text-base transition-colors">Entrar na lista de espera</button>
               </Link>
             </div>
             {/* Hamburger menu (mobile) */}
             <button
-              className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+              className="lg:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
               onClick={() => setMenuOpen(true)}
               aria-label="Abrir menu"
             >
