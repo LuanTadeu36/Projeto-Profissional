@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import grupoCorrida from "../assets/grupo-corrida.jpg";
 
 function Hero() {
@@ -23,10 +24,10 @@ function Hero() {
         <p className="max-w-lg text-sm md:text-lg opacity-90 leading-relaxed">
           Inspirados pela crença inabalável na mentalidade de crescimento, acreditamos que cada experiência na vida, seja ela uma vitória ou um desafio, é uma oportunidade de evolução pessoal e esportiva.
         </p>
-        <a
-          href="/lista-espera"
+        <Link
+          to="/lista-espera"
           className="inline-block bg-yellow-400 hover:bg-yellow-500 text-preto font-bold text-base md:text-lg rounded-lg px-9 py-3 shadow-lg transition-all duration-200 tracking-wide focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
-        >Entrar na lista de espera</a>
+        >Entrar na lista de espera</Link>
       </div>
     </section>
   );

@@ -1,13 +1,1 @@
-/* Arquivo limpo para uso exclusivo do Tailwind CSS. */
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-/* Arquivo limpo para Tailwind. */
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* Estilos específicos do App — Tailwind é usado via index.css */

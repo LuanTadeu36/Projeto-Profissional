@@ -27,7 +27,7 @@ export default function Header() {
   }, [menuOpen]);
 
   const mobileMenu = menuOpen && createPortal(
-    <div className="xl:hidden">
+    <div className="md:hidden">
       {/* Overlay escuro */}
       <div 
         className="fixed inset-0"
@@ -51,7 +51,7 @@ export default function Header() {
           <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/sobre" onClick={() => setMenuOpen(false)}>Quem Somos</Link>
           <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/evolucao" onClick={() => setMenuOpen(false)}>Evolução</Link>
           <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/documentario" onClick={() => setMenuOpen(false)}>Documentário</Link>
-          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/roadmap" onClick={() => setMenuOpen(false)}>O que está por vir</Link>
+          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/roadmap" onClick={() => setMenuOpen(false)}>Nosso App</Link>
           <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/redes" onClick={() => setMenuOpen(false)}>Redes</Link>
           <Link to="/lista-espera" onClick={() => setMenuOpen(false)} className="w-full mt-4">
             <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-md px-5 py-3 text-base">Entrar na lista de espera</button>
@@ -65,35 +65,35 @@ export default function Header() {
   return (
     <>
       <header className="w-full z-40 transition-all duration-300 bg-white/80 backdrop-blur-sm absolute top-0 left-0">
-        <div className="flex items-center px-2 pt-4 pb-3 xl:px-8 xl:pt-6 xl:pb-4 w-full">
+        <div className="flex items-center px-2 pt-4 pb-3 md:px-8 md:pt-6 md:pb-4 w-full">
           {/* Esquerda: Logo + NO CORRE */}
           <div className="flex items-center justify-start">
             <Link to="/" className="flex items-center gap-0 select-none">
-              <img src={teste2} alt="Logo secundário" className="h-8 xl:h-10 ml-1 xl:ml-2 mr-1 xl:mr-2" />
-              <span className="font-bold text-base xl:text-lg tracking-widest text-black transition-colors whitespace-nowrap">NO CORRE</span>
+              <img src={teste2} alt="Logo secundário" className="h-8 md:h-10 ml-1 md:ml-2 mr-1 md:mr-2" />
+              <span className="font-bold text-base md:text-lg tracking-widest text-black transition-colors whitespace-nowrap">NO CORRE</span>
             </Link>
           </div>
 
           {/* Centro: Navegação */}
-          <nav className="hidden xl:flex flex-grow justify-center gap-2 items-center">
-            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/sobre">Quem Somos</Link>
-            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/evolucao">Evolução</Link>
-            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/documentario">Documentário</Link>
-            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/roadmap">O que está por vir</Link>
-            <Link className="px-3 py-2 font-medium text-black hover:text-yellow-500 transition-colors" to="/redes">Redes</Link>
+          <nav className="hidden md:flex flex-grow justify-center gap-2 items-center">
+            <Link className="px-3 py-2 font-medium text-black hover:text-amarelo transition-colors" to="/sobre">Quem Somos</Link>
+            <Link className="px-3 py-2 font-medium text-black hover:text-amarelo transition-colors" to="/evolucao">Evolução</Link>
+            <Link className="px-3 py-2 font-medium text-black hover:text-amarelo transition-colors" to="/documentario">Documentário</Link>
+            <Link className="px-3 py-2 font-medium text-black hover:text-amarelo transition-colors" to="/roadmap">Nosso App</Link>
+            <Link className="px-3 py-2 font-medium text-black hover:text-amarelo transition-colors" to="/redes">Redes</Link>
           </nav>
 
           {/* Direita: Botão lista de espera (desktop) OU hamburguer (mobile) */}
           <div className="flex items-center ml-auto">
             {/* Botão lista de espera desktop */}
-            <div className="hidden xl:flex items-center justify-end">
+            <div className="hidden md:flex items-center justify-end">
               <Link to="/lista-espera">
                 <button className="bg-yellow-400 hover:bg-yellow-500 text-preto font-semibold rounded-md px-5 py-2 text-base transition-colors">Entrar na lista de espera</button>
               </Link>
             </div>
             {/* Hamburger menu (mobile) */}
             <button
-              className="xl:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+              className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
               onClick={() => setMenuOpen(true)}
               aria-label="Abrir menu"
             >
