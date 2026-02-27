@@ -21,20 +21,26 @@ function ListaEspera() {
     setErroEmail("");
     setStatus("loading");
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
     try {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nome, email }),
+        signal: controller.signal,
       });
 
+      clearTimeout(timeout);
       setStatus("success");
       setNome("");
       setEmail("");
       setEmailConfirm("");
       setLgpd(false);
     } catch {
+      clearTimeout(timeout);
       setStatus("error");
     }
   }
