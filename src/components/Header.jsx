@@ -1,18 +1,10 @@
-
 import { Link } from "react-router-dom";
-import teste2 from "../assets/teste2.png";
-import React, { useState, useEffect } from "react";
+import logo from "../assets/logo-nocorre.png";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Bloquear scroll do body quando menu está aberto
   useEffect(() => {
@@ -26,36 +18,43 @@ export default function Header() {
     };
   }, [menuOpen]);
 
+  // Fechar menu com tecla Escape
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen]);
+
   const mobileMenu = menuOpen && createPortal(
     <div className="lg:hidden">
       {/* Overlay escuro */}
       <div 
-        className="fixed inset-0"
-        style={{ zIndex: 99998, backgroundColor: 'rgba(0,0,0,0.8)' }}
+        className="fixed inset-0 z-[99998] bg-black/80"
         onClick={() => setMenuOpen(false)} 
       />
       
       {/* Painel do menu */}
       <div 
-        className="fixed top-0 right-0 h-full w-[280px] flex flex-col"
-        style={{ zIndex: 99999, backgroundColor: '#111111' }}
+        className="fixed top-0 right-0 h-full w-[280px] flex flex-col z-[99999] bg-preto"
       >
         <button
-          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-yellow-400 text-3xl font-bold hover:text-yellow-300"
+          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-amarelo text-3xl font-bold hover:text-amarelo/80"
           onClick={() => setMenuOpen(false)}
           aria-label="Fechar menu"
         >
           ✕
         </button>
         <nav className="flex flex-col items-stretch gap-2 mt-20 px-4">
-          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/sobre" onClick={() => setMenuOpen(false)}>Quem Somos</Link>
-          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/evolucao" onClick={() => setMenuOpen(false)}>Evolução</Link>
-          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/documentario" onClick={() => setMenuOpen(false)}>Documentário</Link>
-          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/roadmap" onClick={() => setMenuOpen(false)}>Nosso App</Link>
-          <Link className="text-white hover:text-yellow-400 text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/redes" onClick={() => setMenuOpen(false)}>Redes</Link>
-          <Link to="/lista-espera" onClick={() => setMenuOpen(false)} className="w-full mt-4">
-            <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-md px-5 py-3 text-base">Entrar na lista de espera</button>
-          </Link>
+          <Link className="text-white hover:text-amarelo text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/sobre" onClick={() => setMenuOpen(false)}>Quem Somos</Link>
+          <Link className="text-white hover:text-amarelo text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/evolucao" onClick={() => setMenuOpen(false)}>Evolução</Link>
+          <Link className="text-white hover:text-amarelo text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/documentario" onClick={() => setMenuOpen(false)}>Documentário</Link>
+          <Link className="text-white hover:text-amarelo text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/roadmap" onClick={() => setMenuOpen(false)}>Nosso App</Link>
+          <Link className="text-white hover:text-amarelo text-lg font-medium py-4 px-4 text-center rounded-lg hover:bg-white/10" to="/redes" onClick={() => setMenuOpen(false)}>Redes</Link>
+          <Link to="/lista-espera" onClick={() => setMenuOpen(false)} className="w-full mt-4 block bg-amarelo hover:bg-amarelo/90 text-preto font-semibold rounded-md px-5 py-3 text-base text-center">Quero fazer parte</Link>
         </nav>
       </div>
     </div>,
@@ -69,7 +68,7 @@ export default function Header() {
           {/* Esquerda: Logo + NO CORRE */}
           <div className="flex items-center justify-start">
             <Link to="/" className="flex items-center gap-0 select-none">
-              <img src={teste2} alt="Logo secundário" className="h-8 md:h-10 ml-1 md:ml-2 mr-1 md:mr-2" />
+              <img src={logo} alt="NoCorre — logo" className="h-8 md:h-10 ml-1 md:ml-2 mr-1 md:mr-2" />
               <span className="font-bold text-base md:text-lg tracking-widest text-black transition-colors whitespace-nowrap">NO CORRE</span>
             </Link>
           </div>
@@ -87,9 +86,7 @@ export default function Header() {
           <div className="flex items-center ml-auto">
             {/* Botão lista de espera desktop */}
             <div className="hidden lg:flex items-center justify-end">
-              <Link to="/lista-espera">
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-preto font-semibold rounded-md px-5 py-2 text-base transition-colors">Entrar na lista de espera</button>
-              </Link>
+              <Link to="/lista-espera" className="bg-amarelo hover:bg-amarelo/90 text-preto font-semibold rounded-md px-5 py-2 text-base transition-colors">Quero fazer parte</Link>
             </div>
             {/* Hamburger menu (mobile) */}
             <button
@@ -97,9 +94,9 @@ export default function Header() {
               onClick={() => setMenuOpen(true)}
               aria-label="Abrir menu"
             >
-              <span className="block w-7 h-1 rounded mb-1 bg-yellow-400"></span>
-              <span className="block w-7 h-1 rounded mb-1 bg-yellow-400"></span>
-              <span className="block w-7 h-1 rounded bg-yellow-400"></span>
+              <span className="block w-7 h-1 rounded mb-1 bg-amarelo"></span>
+              <span className="block w-7 h-1 rounded mb-1 bg-amarelo"></span>
+              <span className="block w-7 h-1 rounded bg-amarelo"></span>
             </button>
           </div>
         </div>

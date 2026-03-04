@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwmg6DkymW9bnVeZ7NjQhnTr8SnTI93ZNLD6pLlH2bNfB6rOWqZBDCdI3tcFJKl2fur/exec";
+  import.meta.env.VITE_GOOGLE_SCRIPT_URL || "https://script.google.com/macros/s/AKfycbwmg6DkymW9bnVeZ7NjQhnTr8SnTI93ZNLD6pLlH2bNfB6rOWqZBDCdI3tcFJKl2fur/exec";
 
 function ListaEspera() {
   const [nome, setNome] = useState("");
@@ -68,14 +68,16 @@ function ListaEspera() {
             </p>
             <button
               onClick={() => setStatus("idle")}
-              className="mt-6 text-amarelo text-sm underline hover:text-yellow-400 transition-colors"
+              className="mt-6 text-amarelo text-sm underline hover:text-amarelo/80 transition-colors"
             >
               Cadastrar outro e-mail
             </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 bg-white/5 border border-white/10 p-6 md:p-8 rounded-2xl">
+            <label htmlFor="nome" className="sr-only">Seu nome</label>
             <input
+              id="nome"
               type="text"
               placeholder="Seu nome"
               required
@@ -86,7 +88,9 @@ function ListaEspera() {
               }}
               className="rounded-lg px-4 py-3 bg-white/10 text-white placeholder-white/40 border border-white/10 focus:outline-none focus:ring-2 focus:ring-amarelo focus:border-transparent transition-all"
             />
+            <label htmlFor="email" className="sr-only">Seu melhor e-mail</label>
             <input
+              id="email"
               type="email"
               placeholder="Seu melhor e-mail"
               required
@@ -94,16 +98,19 @@ function ListaEspera() {
               onChange={(e) => { setEmail(e.target.value); setErroEmail(""); }}
               className="rounded-lg px-4 py-3 bg-white/10 text-white placeholder-white/40 border border-white/10 focus:outline-none focus:ring-2 focus:ring-amarelo focus:border-transparent transition-all"
             />
+            <label htmlFor="emailConfirm" className="sr-only">Confirme seu e-mail</label>
             <input
+              id="emailConfirm"
               type="email"
               placeholder="Confirme seu e-mail"
               required
+              aria-describedby={erroEmail ? "email-error" : undefined}
               value={emailConfirm}
               onChange={(e) => { setEmailConfirm(e.target.value); setErroEmail(""); }}
               className={`rounded-lg px-4 py-3 bg-white/10 text-white placeholder-white/40 border focus:outline-none focus:ring-2 focus:border-transparent transition-all ${erroEmail ? "border-red-500 focus:ring-red-500" : "border-white/10 focus:ring-amarelo"}`}
             />
             {erroEmail && (
-              <p className="text-red-400 text-xs -mt-2">{erroEmail}</p>
+              <p id="email-error" role="alert" className="text-red-400 text-xs -mt-2">{erroEmail}</p>
             )}
             <label className="flex items-start gap-3 text-xs md:text-sm text-white/60 cursor-pointer">
               <input
@@ -118,12 +125,12 @@ function ListaEspera() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="bg-amarelo hover:bg-yellow-400 text-preto font-bold rounded-lg px-6 py-3 mt-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-base"
+              className="bg-amarelo hover:bg-amarelo/90 text-preto font-bold rounded-lg px-6 py-3 mt-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-base"
             >
               {status === "loading" ? "Cadastrando..." : "Quero fazer parte"}
             </button>
             {status === "error" && (
-              <p className="text-red-400 text-sm text-center">
+              <p role="alert" className="text-red-400 text-sm text-center">
                 Algo deu errado. Tente novamente.
               </p>
             )}

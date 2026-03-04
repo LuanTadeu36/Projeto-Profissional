@@ -39,10 +39,10 @@ const cards = [
 
 function Evolucao() {
   return (
-    <section className="w-full bg-preto min-h-screen flex items-center px-4 md:px-8 pt-28 pb-20 md:py-24">
+    <section className="w-full bg-preto min-h-screen flex items-center px-4 md:px-8 pt-28 pb-20 md:pt-20 md:pb-24">
       <div className="max-w-6xl mx-auto text-center w-full">
         {/* Título */}
-        <h2 className="text-3xl md:text-4xl font-extrabold text-amarelo mb-3 md:-mt-16">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-amarelo mb-3">
           Evolua com NoCorre
         </h2>
         <p className="text-white/70 text-base md:text-lg mb-12 max-w-xl mx-auto">

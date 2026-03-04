@@ -6,6 +6,9 @@ export default {
         amarelo: "#FFD000",
         preto: "#111111",
       },
+      fontFamily: {
+        titulo: ['"Bebas Neue"', 'sans-serif'],
+      },
     },
   },
   plugins: [],

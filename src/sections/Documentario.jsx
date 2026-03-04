@@ -17,10 +17,11 @@ function Documentario() {
         >
           <iframe
             className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/el6TtZnjMlM"
+            src="https://www.youtube-nocookie.com/embed/el6TtZnjMlM"
             title="Documentário NoCorre"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            loading="lazy"
           />
         </div>
       </div>

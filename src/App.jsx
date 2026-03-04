@@ -1,50 +1,48 @@
-
-import React from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Hero from "./sections/Hero";
-import Sobre from "./sections/Sobre";
-import Evolucao from "./sections/Evolucao";
-import Documentario from "./sections/Documentario";
-import Roadmap from "./sections/Roadmap";
-import Redes from "./sections/Redes";
-import ListaEspera from "./sections/ListaEspera";
 import Footer from "./components/Footer";
-import { Link } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+import ErrorBoundary from "./components/ErrorBoundary";
+import Hero from "./sections/Hero";
 
-function NotFound() {
-  return (
-    <section className="w-full bg-preto min-h-screen flex items-center justify-center px-4">
-      <div className="text-center">
-        <h1 className="text-6xl md:text-8xl font-extrabold text-amarelo mb-4">404</h1>
-        <p className="text-white/70 text-lg md:text-xl mb-8">Página não encontrada.</p>
-        <Link
-          to="/"
-          className="inline-block bg-yellow-400 hover:bg-yellow-500 text-preto font-bold rounded-lg px-8 py-3 transition-all"
-        >
-          Voltar ao início
-        </Link>
-      </div>
-    </section>
-  );
-}
+const Sobre = lazy(() => import("./sections/Sobre"));
+const Evolucao = lazy(() => import("./sections/Evolucao"));
+const Documentario = lazy(() => import("./sections/Documentario"));
+const Roadmap = lazy(() => import("./sections/Roadmap"));
+const Redes = lazy(() => import("./sections/Redes"));
+const ListaEspera = lazy(() => import("./sections/ListaEspera"));
+const NotFound = lazy(() => import("./components/NotFound"));
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
-      <div className="min-h-screen">
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/evolucao" element={<Evolucao />} />
-          <Route path="/documentario" element={<Documentario />} />
-          <Route path="/roadmap" element={<Roadmap />} />
-          <Route path="/redes" element={<Redes />} />
-          <Route path="/lista-espera" element={<ListaEspera />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
+      <ErrorBoundary>
+        <main className="min-h-screen">
+          <Suspense
+            fallback={
+              <div className="min-h-screen bg-preto flex items-center justify-center">
+                <span className="text-amarelo text-lg font-semibold animate-pulse">
+                  Carregando…
+                </span>
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Hero />} />
+              <Route path="/sobre" element={<Sobre />} />
+              <Route path="/evolucao" element={<Evolucao />} />
+              <Route path="/documentario" element={<Documentario />} />
+              <Route path="/roadmap" element={<Roadmap />} />
+              <Route path="/redes" element={<Redes />} />
+              <Route path="/lista-espera" element={<ListaEspera />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </main>
+      </ErrorBoundary>
       <Footer />
     </Router>
   );
