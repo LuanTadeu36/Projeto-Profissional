@@ -39,7 +39,7 @@ function Redes() {
     <section className="w-full bg-preto min-h-screen flex items-center px-4 md:px-8 py-20 md:py-24">
       <div className="max-w-4xl mx-auto w-full text-center">
         {/* Título */}
-        <h2 className="text-3xl md:text-4xl font-extrabold text-amarelo mb-3">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-amarelo mb-3 mt-10 md:mt-16">
           Siga o NoCorre
         </h2>
         <p className="text-white/70 text-base md:text-lg mb-14 max-w-xl mx-auto">

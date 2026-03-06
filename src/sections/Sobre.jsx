@@ -1,33 +1,27 @@
 const marcos = [
   {
-    data: "Março 2025",
-    titulo: "A ideia nasce",
+    data: " 2023",
+    titulo: "Primeiros Passos",
     descricao:
-      "Numa conversa entre amigos corredores, percebemos que faltava algo que unisse treino, evolução e comunidade num só lugar. Ali nasceu o NoCorre.",
+      "Início das corridas entre amigos com o objetivo de buscar uma vida mais saudável. Em dezembro, surge a ideia do NoCorre, com nome, logo e propósito de incentivar mais pessoas a correrem juntas.",
   },
   {
-    data: "Junho 2025",
-    titulo: "Primeiros passos",
+    data: " 2024",
+    titulo: "Crescimento e Comunidade",
     descricao:
-      "Começamos a desenhar o conceito, definir a identidade visual e a missão: ajudar corredores de todos os níveis a evoluírem juntos.",
+      "Primeira corrida em grupo, lançamento do Instagram, crescimento do grupo, surgimento das camisetas e consolidação do ponto de encontro como referência para corredores.",
   },
   {
-    data: "Outubro 2025",
-    titulo: "Construindo a base",
+    data: " 2025",
+    titulo: "Desafio dos 100 km",
     descricao:
-      "A landing page ficou pronta, as redes sociais começaram a ganhar vida e os primeiros interessados entraram na lista de espera.",
+      "Realização do Desafio dos 100 km, marcando um grande momento de superação e união para a comunidade NoCorre.",
   },
   {
-    data: "Janeiro 2026",
-    titulo: "Comunidade crescendo",
+    data: " 2026",
+    titulo: "Expansão Digital",
     descricao:
-      "O projeto começou a ganhar forma real. Documentário gravado, marca consolidada e um time motivado a fazer acontecer.",
-  },
-  {
-    data: "2026",
-    titulo: "O app chega",
-    descricao:
-      "Tudo que estamos construindo vai caber no seu bolso. Treinos, desempenho, comunidade, loja e muito mais. O NoCorre está chegando.",
+      "Lançamento do site e do aplicativo NoCorre, ampliando o alcance e a experiência da comunidade para ainda mais pessoas.",
   },
 ];
 
