@@ -4,7 +4,7 @@ import grupoCorrida from "../assets/grupo-corrida.jpg";
 function Hero() {
   return (
     <section
-      className="relative min-h-[100dvh] flex items-start justify-start overflow-hidden px-4 md:px-12 pt-16 md:pt-8"
+      className="relative flex-1 flex items-start justify-start overflow-hidden px-4 md:px-12 pt-16 md:pt-8"
       style={{
         backgroundImage: `url(${grupoCorrida})`,
         backgroundSize: "cover",
