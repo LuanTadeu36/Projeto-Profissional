@@ -4,7 +4,7 @@ import grupoCorrida from "../assets/grupo-corrida.jpg";
 function Hero() {
   return (
     <section
-      className="relative min-h-dvh flex items-start justify-start overflow-hidden px-4 md:px-12 pt-16 md:pt-8"
+      className="relative min-h-[100dvh] flex items-start justify-start overflow-hidden px-4 md:px-12 pt-16 md:pt-8"
       style={{
         backgroundImage: `url(${grupoCorrida})`,
         backgroundSize: "cover",
@@ -20,7 +20,7 @@ function Hero() {
         <h2 className="font-semibold text-sm md:text-2xl text-amarelo drop-shadow-md">
           Não é apenas uma marca,<br className="md:hidden" /> é um movimento.
         </h2>
-        <p className="text-xs md:text-[17px] opacity-90 leading-relaxed">
+        <p className="text-xs md:text-[17.5px] opacity-90 leading-relaxed">
           O app que impulsiona seu treino,<br className="md:hidden" /> sua evolução e une sua comunidade.<br /> Seja um dos primeiros a testar.
         </p>
         <div className="pt-5 md:pt-10">
