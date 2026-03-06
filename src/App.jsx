@@ -17,35 +17,30 @@ const NotFound = lazy(() => import("./components/NotFound"));
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <Header />
       <ErrorBoundary>
-        <main className="min-h-screen">
-          <Suspense
-            fallback={
-              <div className="min-h-screen bg-preto flex items-center justify-center">
-                <span className="text-amarelo text-lg font-semibold animate-pulse">
-                  Carregando…
-                </span>
-              </div>
-            }
-          >
-            <Routes>
-              <Route path="/" element={<Hero />} />
-              <Route path="/sobre" element={<Sobre />} />
-              <Route path="/evolucao" element={<Evolucao />} />
-              <Route path="/documentario" element={<Documentario />} />
-              <Route path="/roadmap" element={<Roadmap />} />
-              <Route path="/redes" element={<Redes />} />
-              <Route path="/lista-espera" element={<ListaEspera />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </main>
+        <div className="flex flex-col min-h-screen justify-between">
+          <Header />
+          <main className="flex-1 flex flex-col">
+            <ScrollToTop />
+            <Suspense fallback={<div className="flex-1 flex items-center justify-center">Carregando...</div>}>
+              <Routes>
+                <Route path="/" element={<Hero />} />
+                <Route path="/sobre" element={<Sobre />} />
+                <Route path="/evolucao" element={<Evolucao />} />
+                <Route path="/documentario" element={<Documentario />} />
+                <Route path="/roadmap" element={<Roadmap />} />
+                <Route path="/redes" element={<Redes />} />
+                <Route path="/lista-espera" element={<ListaEspera />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+        </div>
       </ErrorBoundary>
-      <Footer />
     </Router>
   );
 }
+
 
 export default App;
