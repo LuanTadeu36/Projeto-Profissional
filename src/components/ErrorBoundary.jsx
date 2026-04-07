@@ -25,7 +25,7 @@ export default class ErrorBoundary extends Component {
             <Link
               to="/"
               onClick={() => this.setState({ hasError: false })}
-              className="inline-block bg-amarelo hover:bg-amarelo/90 text-preto font-bold rounded-lg px-8 py-3 transition-all"
+              className="inline-block bg-amarelo hover:bg-amber-400 text-preto font-bold rounded-lg px-8 py-3 transition-all"
             >
               Voltar ao início
             </Link>

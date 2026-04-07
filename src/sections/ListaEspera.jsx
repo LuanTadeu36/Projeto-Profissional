@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-const GOOGLE_SCRIPT_URL =
-  import.meta.env.VITE_GOOGLE_SCRIPT_URL || "https://script.google.com/macros/s/AKfycbwmg6DkymW9bnVeZ7NjQhnTr8SnTI93ZNLD6pLlH2bNfB6rOWqZBDCdI3tcFJKl2fur/exec";
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
 function ListaEspera() {
   const [nome, setNome] = useState("");
@@ -46,7 +45,7 @@ function ListaEspera() {
   }
 
   return (
-    <section className="w-full bg-preto min-h-screen flex items-center px-4 md:px-8 py-20 md:py-24">
+    <section className="w-full bg-preto px-4 md:px-8 pt-10 md:pt-14 pb-12 md:pb-16 flex items-center justify-center">
       <div className="max-w-lg mx-auto w-full text-center">
         {status !== "success" && (
           <>

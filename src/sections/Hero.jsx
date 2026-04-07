@@ -4,30 +4,60 @@ import grupoCorrida from "../assets/grupo-corrida.jpg";
 function Hero() {
   return (
     <section
-      className="relative flex-1 flex items-start justify-start overflow-hidden px-4 md:px-12 pt-16 md:pt-8"
+      className="relative flex-1 flex flex-col overflow-hidden"
       style={{
         backgroundImage: `url(${grupoCorrida})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+        backgroundPosition: "center",        minHeight: "calc(100vh - 3.5rem)",      }}
     >
-      {/* Overlay escuro */}
-      <div className="absolute inset-0 bg-black/70 z-10" />
-      <div className="relative z-20 max-w-[18rem] md:max-w-[26rem] w-full text-white flex flex-col items-start space-y-1 md:space-y-3 text-left mt-1 md:mt-32">
-        <h1 className="font-titulo text-3xl md:text-6xl drop-shadow-xl leading-tight tracking-wide uppercase mt-5 md:mt-0">
-          Superando Limites
-        </h1>
-        <h2 className="font-semibold text-sm md:text-2xl text-amarelo drop-shadow-md">
-          Não é apenas uma marca,<br className="md:hidden" /> é um movimento.
-        </h2>
-        <p className="text-xs md:text-[17.5px] opacity-90 leading-relaxed">
-          O app que impulsiona seu treino,<br className="md:hidden" /> sua evolução e une sua comunidade.<br /> Seja um dos primeiros a testar.
-        </p>
-        <div className="pt-5 md:pt-10">
+      {/* Overlay gradiente */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/80 z-10" />
+
+      {/* Conteúdo principal */}
+      <div className="relative z-20 flex-1 flex items-start px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-6">
+        <div className="max-w-xl w-full text-white">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3.5 py-1.5 mb-5 md:mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-amarelo animate-pulse" />
+            <span className="text-white/80 text-xs md:text-sm font-medium tracking-wide">
+              Comunidade de corredores desde 2023
+            </span>
+          </div>
+
+          <h1 className="font-titulo text-5xl md:text-7xl drop-shadow-xl leading-none tracking-wide uppercase mb-3 md:mb-4">
+            Superando<br />Limites
+          </h1>
+          <p className="font-semibold text-sm md:text-xl text-amarelo mb-3 md:mb-4">
+            Não é apenas uma marca — é um movimento.
+          </p>
+          <p className="text-xs md:text-base text-white/75 leading-relaxed max-w-md mb-7 md:mb-9">
+            O app que impulsiona seu treino, acompanha sua evolução e une sua
+            comunidade. Seja um dos primeiros a testar.
+          </p>
           <Link
             to="/lista-espera"
-            className="inline-block bg-amarelo hover:bg-amarelo/90 text-preto font-bold text-sm md:text-lg rounded-lg px-7 py-2.5 md:px-9 md:py-3 shadow-lg transition-all duration-200 tracking-wide focus:outline-none focus:ring-2 focus:ring-amarelo focus:ring-offset-2"
-          >Quero fazer parte</Link>
+            className="inline-block bg-amarelo hover:bg-amber-400 text-preto font-bold text-sm md:text-base rounded-lg px-8 py-3 md:px-10 md:py-3.5 shadow-lg transition-all duration-200 tracking-wide focus:outline-none focus:ring-2 focus:ring-amarelo focus:ring-offset-2 focus:ring-offset-transparent"
+          >
+            Quero fazer parte
+          </Link>
+        </div>
+      </div>
+
+      {/* Barra de estatísticas */}
+      <div className="relative z-20 flex justify-start gap-8 md:gap-12 px-6 md:px-12 lg:px-20 py-4 md:py-5 border-t border-white/10 bg-black/40 backdrop-blur-sm">
+        <div>
+          <p className="text-white font-bold text-base md:text-lg leading-tight">200+</p>
+          <p className="text-white/45 text-xs">Membros ativos</p>
+        </div>
+        <div className="w-px bg-white/10" />
+        <div>
+          <p className="text-white font-bold text-base md:text-lg leading-tight">100km</p>
+          <p className="text-white/45 text-xs">Desafio realizado</p>
+        </div>
+        <div className="w-px bg-white/10" />
+        <div>
+          <p className="text-white font-bold text-base md:text-lg leading-tight">2023</p>
+          <p className="text-white/45 text-xs">Fundado em</p>
         </div>
       </div>
     </section>

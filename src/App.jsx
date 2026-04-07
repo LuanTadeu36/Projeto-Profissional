@@ -18,9 +18,9 @@ function App() {
   return (
     <Router>
       <ErrorBoundary>
-        <div className="flex flex-col min-h-screen justify-between">
+        <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-1 flex flex-col">
+          <main className="flex-1 flex flex-col pt-14 md:pt-16">
             <ScrollToTop />
             <Suspense fallback={<div className="flex-1 flex items-center justify-center">Carregando...</div>}>
               <Routes>

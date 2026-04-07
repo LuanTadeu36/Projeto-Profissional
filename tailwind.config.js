@@ -3,7 +3,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        amarelo: "#FFD000",
+        amarelo: "#F59E0B",
         preto: "#111111",
       },
       fontFamily: {
