@@ -14,7 +14,7 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/80 z-10" />
 
       {/* Conteúdo principal */}
-      <div className="relative z-20 flex-1 flex items-start px-6 md:px-12 lg:px-20 pt-10 md:pt-14 pb-6">
+      <div className="relative z-20 flex-1 flex items-start px-6 md:px-12 lg:px-20 pt-6 md:pt-8 pb-6">
         <div className="max-w-xl w-full text-white">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3.5 py-1.5 mb-5 md:mb-6">
