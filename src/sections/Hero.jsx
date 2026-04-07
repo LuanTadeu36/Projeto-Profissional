@@ -30,7 +30,7 @@ function Hero() {
           <p className="font-semibold text-sm md:text-xl text-amarelo mb-3 md:mb-4">
             Não é apenas uma marca — é um movimento.
           </p>
-          <p className="text-xs md:text-base text-white/75 leading-relaxed max-w-md mb-7 md:mb-9">
+          <p className="text-xs md:text-base text-white/75 leading-relaxed max-w-md mb-2 md:mb-3">
             O app que impulsiona seu treino, acompanha sua evolução e une sua
             comunidade. Seja um dos primeiros a testar.
           </p>
